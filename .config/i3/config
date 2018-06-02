@@ -1,0 +1,278 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+#
+# Mod key
+#
+set $mod Mod4
+
+#
+# Font
+#
+font xft:Noto Sans 10
+
+#
+# Drag floating windows
+#
+floating_modifier $mod
+
+#
+# Shortcuts
+#
+
+# Firefox
+bindsym $mod+F2 exec firefox
+
+# Filemanager
+bindsym $mod+F3 exec pcmanfm
+
+# Terminal
+bindsym $mod+Return exec urxvt
+
+# Kill window
+bindsym $mod+Shift+q kill
+
+# Dmenu
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# Lock
+bindsym Control+$mod+l exec i3lock -e -c 2E3440
+
+#
+# Screenshots
+#
+# Copied from one of the answers here:
+# https://faq.i3wm.org/question/202/what-do-you-guys-use-for-printscreen.1.html
+
+# Whole screen
+bindsym --release Print exec scrot ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
+
+# Selection
+bindsym --release $mod+Print exec scrot -s ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
+
+# Focused window
+bindsym --release $mod+Shift+Print exec scrot -u ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
+
+#
+# Title
+#
+
+# Remove title bar
+new_window pixel 2
+
+#
+# Focus
+#
+
+# Vim like
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# Arrows
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Focus parent
+bindsym $mod+a focus parent
+
+# 
+# Move windows
+# 
+
+# Vim like
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Arrows
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#
+# Orientation
+#
+
+# Split horizontal
+bindsym $mod+h split h
+
+# Split vertical
+bindsym $mod+v split v
+
+# Toggle between vertical and horizontal
+bindsym $mod+e split toggle
+
+# Fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle tiling/floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling/floating
+bindsym $mod+space focus mode_toggle
+
+#
+# Workspaces
+#
+
+# Switch
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move window to workspace
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+
+# Back and forth behaviour
+workspace_auto_back_and_forth yes
+
+# Move to previously focused workpsace
+bindsym $mod+b workspace back_and_forth
+
+# Move workspace to next output
+bindsym $mod+x move workspace to output right
+
+#
+# Reload config
+#
+bindsym $mod+Shift+c reload
+
+#
+# Restart i3
+#
+bindsym $mod+Shift+r restart
+
+#
+# Exit i3
+#
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+#
+# Colors
+#
+
+# Nord color palette
+# Adapted from https://github.com/khamer/base16-i3
+set $base00 #2E3440
+set $base01 #3B4252
+set $base02 #434C5E
+set $base03 #4C566A
+set $base04 #D8DEE9
+set $base05 #E5E9F0
+set $base06 #ECEFF4
+set $base07 #8FBCBB
+set $base08 #88C0D0
+set $base09 #81A1C1
+set $base0A #5E81AC
+set $base0B #BF616A
+set $base0C #D08770
+set $base0D #EBCB8B
+set $base0E #A3BE8C
+set $base0F #B48EAD
+
+#
+# Bar
+#
+
+# Basic bar configuration using the Base16 variables.
+bar {
+    status_command i3status
+
+    colors {
+        background $base00
+        separator  $base03
+        statusline $base04
+
+        # State             Border  BG      Text
+        focused_workspace   $base05 $base0D $base00
+        active_workspace    $base05 $base03 $base00
+        inactive_workspace  $base03 $base01 $base05
+        urgent_workspace    $base08 $base08 $base00
+        binding_mode        $base00 $base0A $base00
+    }
+}
+
+#
+# Windows
+#
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0C
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
+#
+# Resize
+#
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#
+# Gaps
+#
+smart_gaps on
+gaps inner 10
+gaps outer -4
+
+#
+# Audio
+#
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '-10%'
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '+10%'
+bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ 0
+
+#
+# Backlight
+#
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+

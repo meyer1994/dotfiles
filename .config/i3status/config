@@ -1,0 +1,59 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+#
+# Basic
+#
+general {
+    colors = true
+    interval = 5
+    color_good = "#A3BE8C"
+    color_bad = "#BF616A"
+}
+
+#
+# Order
+#
+order += "cpu_usage"
+order += "disk /"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "tztime local"
+
+cpu_usage {
+    format = "cpu %usage"
+}
+
+disk "/" {
+    format = "hdd %avail"
+}
+
+wireless _first_ {
+    format_up = "w %essid %quality"
+    format_down = "no wlan"
+}
+
+ethernet _first_ {
+    format_up = "lan: %ip"
+    format_down = "no lan"
+}
+
+battery all {
+    format = "%status %percentage - %remaining"
+    hide_seconds = true
+    status_bat = "b:"
+    status_chr = "c:"
+
+    # Concatenate values
+    integer_battery_capacity = true
+
+    # Red when belo 15%
+    low_threshold = 15
+    threshold_type = percentage
+}
+
+tztime local {
+    format = "%d.%m. %H:%M"
+}
+
