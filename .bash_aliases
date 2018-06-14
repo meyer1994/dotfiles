@@ -11,7 +11,7 @@ alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 
 # update everything
-alias update='pikaur -Syua'
+alias update='pikaur -Syu'
 
 # remove orphaned packages
 alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
