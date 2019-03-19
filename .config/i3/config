@@ -101,10 +101,10 @@ bindsym $mod+Shift+Right move right
 #
 
 # Split horizontal
-bindsym $mod+h split h
+bindsym $mod+Shift+h split h
 
 # Split vertical
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # Toggle between vertical and horizontal
 bindsym $mod+e split toggle
