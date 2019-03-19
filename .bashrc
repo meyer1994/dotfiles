@@ -19,3 +19,4 @@ fi
 
 # add nvim as the editor
 export EDITOR=nvim
+
