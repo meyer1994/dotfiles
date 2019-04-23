@@ -50,7 +50,7 @@
 	"default_encoding": "UTF-8",
 	"default_line_ending": "system",
 	"detect_indentation": false,
-	"dictionary": "Packages/LanguagePortuguese/Portuguese (Brazilian).dic",
+	"dictionary": "Packages/Language - English/en_GB.dic",
 	"drag_text": true,
 	"draw_centered": false,
 	"draw_indent_guides": true,
