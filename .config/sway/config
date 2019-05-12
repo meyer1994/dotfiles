@@ -1,6 +1,30 @@
-# i3 config file (v4)
+# sway config file
+
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Monitors
+#
+output eDP-1 resolution 1920x1080 position 0,0
+output HDMI-A-1 resolution 2560x1080 position 1920,0
+
+#
+# Keyboard
+#
+input * xkb_layout br
+
+#
+# Idle
+#
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
+
+#
+# Wallpaper
+#
+output eDP-1 background ~/Pictures/Wallpapers/forest_trees_fog_110131_1920x1080.jpg fill
+output HDMI-A-1 background ~/Pictures/Wallpapers/forest_trees_fog_110131_1920x1080.jpg fill
 
 #
 # Mod key
@@ -10,7 +34,7 @@ set $mod Mod4
 #
 # Font
 #
-font xft:Noto Sans 10
+font Droid Sans Mono 10
 
 #
 # Drag floating windows
@@ -28,31 +52,26 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 
 # Terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # Kill window
 bindsym $mod+Shift+q kill
 
-# Dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Bemenu
+bindsym $mod+d exec --no-startup-id bemenu-run
 
 # Lock
-bindsym Control+$mod+l exec i3lock -e -c 2E3440
+bindsym Control+$mod+l exec swaylock -e -c 2E3440
 
 #
 # Screenshots
 #
-# Copied from one of the answers here:
-# https://faq.i3wm.org/question/202/what-do-you-guys-use-for-printscreen.1.html
 
 # Whole screen
-bindsym --release Print exec scrot ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym --release Print exec grim ~/Pictures/`date +'%Y-%m-%d-%H%M%S_grim.png'`
 
 # Selection
-bindsym --release $mod+Print exec scrot -s ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
-
-# Focused window
-bindsym --release $mod+Shift+Print exec scrot -u ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym --release $mod+Print exec grim -g `slurp` ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
 
 #
 # Title
@@ -80,9 +99,9 @@ bindsym $mod+Right focus right
 # Focus parent
 bindsym $mod+a focus parent
 
-# 
+#
 # Move windows
-# 
+#
 
 # Vim like
 bindsym $mod+Shift+j move left
@@ -161,14 +180,10 @@ bindsym $mod+x move workspace to output right
 bindsym $mod+Shift+c reload
 
 #
-# Restart i3
+# Restart sway
 #
 bindsym $mod+Shift+r restart
 
-#
-# Exit i3
-#
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #
 # Colors
@@ -264,15 +279,7 @@ gaps inner 10
 gaps outer -4
 
 #
-# Audio
-#
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '-10%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '+10%'
-bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ 0
-
-#
 # Backlight
 #
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-

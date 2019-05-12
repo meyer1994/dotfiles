@@ -91,13 +91,13 @@
 		".svn",
 		".git",
 		".hg",
-        "__pycache__"
+		"__pycache__"
 	],
 	"font_face": "Hack",
 	"font_options":
 	[
 	],
-	"font_size": 15,
+	"font_size": 18,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": true,
