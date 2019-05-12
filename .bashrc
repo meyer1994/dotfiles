@@ -20,6 +20,8 @@ fi
 # add nvim as the editor
 export EDITOR=nvim
 
+# no sudo to install global npm packages
+export PATH="$PATH:$HOME/.node/bin"
 
 # GTK wayland configuration
 gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
