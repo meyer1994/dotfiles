@@ -52,7 +52,7 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 
 # Terminal
-exec xrdb ~./.Xresources
+exec xrdb ~/.Xresources
 bindsym $mod+Return exec urxvt
 
 # Kill window
