@@ -61,7 +61,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id bemenu-run
 
 # Lock
-bindsym Control+$mod+l exec swaylock -e -c 2E3440
+bindsym $mod+Ctrl+l exec swaylock -e -c 2E3440
 
 #
 # Screenshots
@@ -183,7 +183,6 @@ bindsym $mod+Shift+c reload
 # Restart sway
 #
 bindsym $mod+Shift+r restart
-
 
 #
 # Colors
