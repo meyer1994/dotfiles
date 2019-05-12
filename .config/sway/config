@@ -34,7 +34,7 @@ set $mod Mod4
 #
 # Font
 #
-font Droid Sans Mono 10
+font Noto Sans Medium 12
 
 #
 # Drag floating windows
@@ -58,7 +58,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Bemenu
-bindsym $mod+d exec --no-startup-id bemenu-run
+bindsym $mod+d exec --no-startup-id bemenu-run -i --fn 'Noto Sans 12'
 
 # Lock
 bindsym $mod+Ctrl+l exec swaylock -e -c 2E3440
