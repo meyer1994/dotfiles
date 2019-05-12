@@ -215,6 +215,8 @@ set $base0F #B48EAD
 bar {
     status_command i3status
 
+    separator_symbol ' | '
+
     colors {
         background $base00
         separator  $base03
