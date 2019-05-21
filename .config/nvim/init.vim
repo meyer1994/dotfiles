@@ -46,6 +46,10 @@ set autoindent
 set smartindent
 set smarttab
  
+" make tab appear smaller
+set tabstop=4
+set shiftwidth=4
+
 " show cursor coordinates
 set ruler
  
@@ -64,19 +68,21 @@ call plug#begin('~/.vim/plugged')
     " auto completion
     Plug 'Shougo/deoplete.nvim'
 
-    " auto brackets, braces etc completion
+    " git gutter
+    Plug 'airblade/vim-gitgutter'
+
+    " auto add closing tags
     Plug 'raimondi/delimitmate'
 
-    " indentation guides
+    " add indentation guides
     Plug 'yggdroot/indentline'
+
+    " nerdtree
+    Plug 'scrooloose/nerdtree'
+
+    " add a line showing open buffers
+    Plug 'bling/vim-bufferline'
 
 call plug#end()
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 let g:deoplete#enable_at_startup = 1
