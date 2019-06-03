@@ -72,7 +72,7 @@ bindsym $mod+Ctrl+l exec swaylock -e -c 2E3440
 bindsym --release Print exec grim ~/Pictures/`date +'%Y-%m-%d-%H%M%S_grim.png'`
 
 # Selection
-bindsym --release $mod+Print exec grim -g `slurp` ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym --release $mod+Print exec grim -g `slurp` ~/Pictures/`date +'%Y-%m-%d_%H:%M%S_grim.png'`
 
 #
 # Title
