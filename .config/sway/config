@@ -79,7 +79,7 @@ bindsym --release $mod+Print exec grim -g "`slurp`" ~/Pictures/`date +'%Y-%m-%d_
 #
 
 # Remove title bar
-new_window pixel 2
+default_border pixel 2
 
 #
 # Focus
