@@ -21,7 +21,7 @@ alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias conf='nvim ~/.config/sway/config'
 
 # calculator
-alias calc='python -i -c "from math import *"'
+alias calc='python -i -c "from math import *; from statistics import *"'
 
 # neovim as the default
 alias vi='nvim'
