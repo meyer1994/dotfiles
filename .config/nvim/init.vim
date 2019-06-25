@@ -64,8 +64,11 @@ set backspace=indent,eol,start
 " vim-plugin plugin manager part
 " write 'Plug <your plugin>' here to add plugins, then call :PluginInstall
 call plug#begin('~/.vim/plugged')
+	
+	" linter
+	Plug 'w0rp/ale'
 
-    " auto completion
+	" auto completion
     Plug 'Shougo/deoplete.nvim'
 
     " git gutter
@@ -85,4 +88,9 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+" enable deoplete
 let g:deoplete#enable_at_startup = 1
+
+" enable ale
+let g:ale_lint_on_enter = 1
+
