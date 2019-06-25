@@ -24,6 +24,7 @@ export EDITOR=nvim
 export PATH="$PATH:$HOME/.node/bin"
 
 # GTK wayland configuration
+export GDK_BACKEND=wayland
 gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Arc'
 gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
