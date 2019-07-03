@@ -30,8 +30,8 @@ bindswitch lid:off output $laptop enable
 #
 # Wallpaper
 #
-output eDP-1 background ~/Pictures/Wallpapers/forest_trees_fog_110131_1920x1080.jpg fill
-output HDMI-A-1 background ~/Pictures/Wallpapers/forest_trees_fog_110131_1920x1080.jpg fill
+output eDP-1 background ~/Pictures/wall/forest_trees_fog_1920x1080.jpg fill
+output HDMI-A-1 background ~/Pictures/wall/forest_trees_fog_2560x1080.jpg fill
 
 #
 # Mod key
