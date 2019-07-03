@@ -20,6 +20,13 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 2E3440'
 
+# 
+# Lid close
+#
+set $laptop 'eDP-1'
+bindswitch lid:on output $laptop disable
+bindswitch lid:off output $laptop enable
+
 #
 # Wallpaper
 #
