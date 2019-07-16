@@ -10,10 +10,22 @@ URxvt.faceName: Fixed
 URxvt.faceSize: 11
 URxvt.letterSpace: 0
 
+! wheel scroll
+URxvt.secondaryWheel: 1
+
+! do not scroll with output
+URxvt.scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt.scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt.scrollTtyKeypress: true
+
 ! custom font
-URxvt.font:         xft:Hack-Regular:pixelsize=18
-URxvt.boldFont:     xft:Hack-Bold:pixelsize=18
-URxvt.italicFont:   xft:Hack-Italic:pixelsize=18
+URxvt.font:         xft:Hack:regular:pixelsize=18
+URxvt.boldFont:     xft:Hack:bold:pixelsize=18
+URxvt.italicFont:   xft:Hack:italic:pixelsize=18
 
 ! remove scroll bar
 URxvt.scrollBar: false

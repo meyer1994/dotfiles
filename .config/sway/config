@@ -60,7 +60,7 @@ bindsym $mod+F3 exec pcmanfm
 
 # Terminal
 exec xrdb ~/.Xresources
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec urxvt
 
 # Kill window
 bindsym $mod+Shift+q kill
