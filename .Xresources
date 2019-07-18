@@ -23,9 +23,9 @@ URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 
 ! custom font
-URxvt.font:         xft:Hack:regular:pixelsize=18
-URxvt.boldFont:     xft:Hack:bold:pixelsize=18
-URxvt.italicFont:   xft:Hack:italic:pixelsize=18
+URxvt.font:         xft:Hack Nerd Font:regular:pixelsize=18
+URxvt.boldFont:     xft:Hack Nerd Font:bold:pixelsize=18
+URxvt.italicFont:   xft:Hack Nerd Font:italic:pixelsize=18
 
 ! remove scroll bar
 URxvt.scrollBar: false
