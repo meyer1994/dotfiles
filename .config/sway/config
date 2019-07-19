@@ -41,7 +41,7 @@ set $mod Mod4
 #
 # Font
 #
-font Noto Sans Medium 12
+font "Noto Sans Medium Nerd Font" 12
 
 #
 # Drag floating windows
