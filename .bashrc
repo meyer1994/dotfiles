@@ -14,7 +14,7 @@ eval "`dircolors -b $DIR_COLORS`"
 
 # this make possible to add aliases into a separate file
 if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+    . ~/.bash_aliases
 fi
 
 # add nvim as the editor
@@ -25,7 +25,24 @@ export PATH="$PATH:$HOME/.node/bin"
 
 # GTK wayland configuration
 export GDK_BACKEND=wayland
+
+# GTK settings
 gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Arc'
 gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 
+# Eternal bash history.
+# ---------------------
+# Undocumented feature which sets the size to "unlimited".
+# https://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE=~/.bash_eternal_history
+
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
