@@ -20,7 +20,7 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 2E3440'
 
-# 
+#
 # Lid close
 #
 set $laptop 'eDP-1'
@@ -60,7 +60,7 @@ bindsym $mod+F3 exec pcmanfm
 
 # Terminal
 exec xrdb ~/.Xresources
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # Kill window
 bindsym $mod+Shift+q kill
