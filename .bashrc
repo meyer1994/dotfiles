@@ -23,6 +23,9 @@ export EDITOR=nvim
 # no sudo to install global npm packages
 export PATH="$PATH:$HOME/.node/bin"
 
+# add python libs
+export PATH="$PATH:$HOME/.local/bin"
+
 # GTK wayland configuration
 export GDK_BACKEND=wayland
 
