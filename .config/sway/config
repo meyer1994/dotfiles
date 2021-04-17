@@ -53,7 +53,7 @@ floating_modifier $mod
 #
 
 # Firefox
-bindsym $mod+F2 exec firefox
+bindsym $mod+F2 exec brave
 
 # Filemanager
 bindsym $mod+F3 exec pcmanfm
