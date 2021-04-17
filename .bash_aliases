@@ -27,3 +27,5 @@ alias calc='python -i -c "from math import *; from statistics import *"'
 alias vi='nvim'
 alias vim='nvim'
 
+# venv alias
+alias venv='python -m venv .venv && source .venv/bin/activate'
